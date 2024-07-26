@@ -34,7 +34,7 @@ Here are some examples of how to use the project:
 
 2. Run client:
     ```bash
-    python socket_client.py.py
+    python socket_client.py
     ```
 
 
