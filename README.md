@@ -1,7 +1,7 @@
 # Point cloud rendering
 
 ## Introduction
-This is a brief description of the project, outlining its purpose and functionality.
+Use OpenGL to render point cloud data and receive the data through sockets.
 
 ## Table of Contents
 - [Introduction](#introduction)
