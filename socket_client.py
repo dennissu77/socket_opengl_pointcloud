@@ -1,6 +1,6 @@
 import socket
 import time
-
+ 
 def read_cloud_point_file(filename):
     with open(filename, 'r') as file:
         return [line.strip().split() for line in file]
