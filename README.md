@@ -13,7 +13,7 @@ Follow these steps to install the project:
 
 1. Clone the repository:
     ```bash
-    https://github.com/dennissu77/socket_opengl_pointcloud.git
+    git clone https://github.com/dennissu77/socket_opengl_pointcloud.git
     ```
 2. Navigate to the project directory:
     ```bash
