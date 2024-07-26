@@ -5,7 +5,7 @@ def read_cloud_point_file(filename):
     with open(filename, 'r') as file:
         return [line.strip().split() for line in file]
 
-def start_client(send_delay=0.001):
+def start_client(send_delay):
     host = '127.0.0.1'
     port = 65432
 
@@ -22,7 +22,7 @@ def start_client(send_delay=0.001):
         max_messages_per_second = 0
 
         # 每次發送1行數據
-        chunk_size = 100
+        chunk_size = (183234)
         for i in range(0, len(data_list), chunk_size):
             chunk = data_list[i:i+chunk_size]
             message = '\n'.join([' '.join(row) for row in chunk]) + '\n\n'  # 添加分隔符
@@ -31,8 +31,8 @@ def start_client(send_delay=0.001):
 
             data = b''
             while b'\n\n' not in data:
-                data += s.recv(24576 )#24576     8192
-            print(f"收到回覆: {data.decode()}")
+                data += s.recv(2457600 )#24576     8192
+            #print(f"收到回覆: {data.decode()}")
 
             # 更新監測數據
             message_count += 1
@@ -59,4 +59,4 @@ def start_client(send_delay=0.001):
         print(f"最大每秒發送速率: {max_messages_per_second:.2f} 條/秒")
 
 if __name__ == "__main__":
-    start_client(send_delay=0.001)  # 設定發送延遲為0.1秒
+    start_client(send_delay=0)  # 設定發送延遲為0.1秒

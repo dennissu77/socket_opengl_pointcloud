@@ -67,10 +67,10 @@ def receive_data(conn):
     conn.setblocking(0)  # 設置為非阻塞模式
     buffer = b''
     while running:
-        ready = select.select([conn], [], [], 1)  # 等待1秒
+        ready = select.select([conn], [], [], 0)  # 等待1秒   1
         if ready[0]:
             try:
-                data = conn.recv(24576 )#24576     8192
+                data = conn.recv(2457600 )#24576     8192
                 if not data:
                     break
                 buffer += data
@@ -79,7 +79,7 @@ def receive_data(conn):
                 while b'\n\n' in buffer:
                     packet, buffer = buffer.split(b'\n\n', 1)
                     decoded_packet = packet.decode().strip()
-                    print(f"收到: {decoded_packet}")
+                    #print(f"收到: {decoded_packet}")
                     
                     # 將接收到的數據拆分並存儲到列表中
                     new_points = []
@@ -101,7 +101,7 @@ def receive_data(conn):
                 if e.errno != 10035:  # 忽略 "無法立即完成通訊端操作" 錯誤
                     print(f"接收數據時發生錯誤: {e}")
                     break
-        time.sleep(0.05)  # 短暫休眠以減少 CPU 使用
+        time.sleep(0)  # 短暫休眠以減少 CPU 使用   0.0005
     conn.close()
 
 def prepare_vbo_vao(points):
