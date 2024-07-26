@@ -13,11 +13,11 @@ Follow these steps to install the project:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/dennissu77/pointclout_render.git
+    https://github.com/dennissu77/socket_opengl_pointcloud.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd opengl_cube
+    cd socket_opengl_pointcloud
     ```
 3. Install the required dependencies:
     ```bash
@@ -27,17 +27,14 @@ Follow these steps to install the project:
 ## Usage
 Here are some examples of how to use the project:
 
-1. Run the main program(約每秒4禎 慢  有顏色):
+1. Run the main program(server):
     ```bash
-    python rander_asc_file_2.py
+    python socket_server_mthread_opengl.py
     ```
 
-2. Run the opttime program(realtime   目前無顏色):
+2. Run client:
     ```bash
-    python rander_asc_file_2_opttime.py
+    python socket_client.py.py
     ```
 
-3. Run the socket version program:
-    ```bash
-    python .py
-    ```
+
